@@ -1,6 +1,10 @@
 # Python cache
 __pycache__
-*Ã/__ycache__
+*/__pycache__
 
 # Virtual environment
 venv
+
+# Environment variables
+.env
+*/.env
