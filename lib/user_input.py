@@ -6,12 +6,12 @@ from lib.utils import opening_text
 from lib import greet
 
 exit_messages = [
-    'stop',
-    'exit'
+    'exit',
+    'goodbye'
 ]
 
 
-def take_user_input() -> str:
+def take_user_input(state_opening: bool = True) -> str:
     """
     1. Takes user input.
     2. Processes the input.
@@ -35,15 +35,15 @@ def take_user_input() -> str:
         # If the user asks to exit, stop listening for input
         # (exit the bot)
         for exit_msg in exit_messages:
-            if exit_msg in query:
+            if exit_msg == query:
                 greet.stop()
 
-        speak(choice(opening_text))  # Say a random opening
+        if state_opening:
+            speak(choice(opening_text))  # Say a random opening
+        return query
 
-    except Exception:  # noqa
-        speak('Sorry, I could not understand. Could you please repeat what you said?')
-        query = 'None'
-    return query
+    except Exception as e:  # noqa
+        raise e
 
 
 def __listen(recognizer: sr.Recognizer) -> sr.AudioData:
