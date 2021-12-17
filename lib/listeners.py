@@ -33,7 +33,7 @@ def on_pause(listen_text: str) -> None:
     """
     for pause in pause_options:
         if pause not in listen_text:
-            return
+            continue
         speech.speak('I will take a break. Let me know when you need me.')
         while True:
             try:
