@@ -7,7 +7,7 @@ USERNAME = config('USER')
 BOTNAME = config('BOTNAME')
 
 
-def greet_user() -> None:
+def start_bot() -> None:
     """
     Greet a user (TTS).
     """
@@ -27,7 +27,7 @@ def greet_user() -> None:
     speak(f"I am {BOTNAME}. How may I assist you?")
 
 
-def stop():
+def exit_bot():
     hour = datetime.now().hour
 
     if 21 <= hour < 6:
