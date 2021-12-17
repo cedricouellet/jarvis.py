@@ -25,7 +25,7 @@ def take_user_input() -> str:
     r.pause_threshold = 1
 
     # Listen for audio
-    audio = listen(r)
+    audio = __listen(r)
 
     # Attempt to process the audio
     try:
@@ -46,7 +46,7 @@ def take_user_input() -> str:
     return query
 
 
-def listen(recognizer: sr.Recognizer) -> sr.AudioData:
+def __listen(recognizer: sr.Recognizer) -> sr.AudioData:
     """
     Listen for speech
 
