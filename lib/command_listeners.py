@@ -10,6 +10,7 @@ __WEATHER = 'weather'
 __ADVICE = 'advice'
 __COOL = 'cool'
 __FCK_YOU = 'f*** you'
+__DIE = 'die'
 
 __PAUSE_OPTIONS = [
     'stop',
@@ -62,7 +63,7 @@ def on_cool(listen_text: str) -> None:
 
     :param listen_text: The input text.
     """
-    if 'cool' == listen_text:
+    if __COOL == listen_text:
         speech.speak('I know right?')
 
 
@@ -145,7 +146,7 @@ def on_die(listen_text: str) -> None:
 
     :param listen_text: The input text
     """
-    if 'die' in listen_text:
+    if __DIE in listen_text:
         speech.speak("I will now die.")
         greet.exit_bot()
 
